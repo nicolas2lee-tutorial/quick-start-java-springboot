@@ -21,10 +21,10 @@ public class PostEntity {
     @JoinColumn(name="creator_id", nullable=false)
     private UserEntity creator;
 
-    @Column(name = "content", insertable = false, updatable = false)
+    @Column(name = "content")
     private String content;
 
-    @Column(name = "content")
+    @Column(name = "lastUpdated")
     private String lastUpdated;
 
     public Long getPostId() {
