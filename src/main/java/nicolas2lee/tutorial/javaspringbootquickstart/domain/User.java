@@ -1,20 +1,20 @@
 package nicolas2lee.tutorial.javaspringbootquickstart.domain;
 
 public class User {
-  private long userId;
+  private Long id;
   private String username;
   private String password;
   private String email;
 
-  public User(long userId, String username, String password, String email) {
-    this.userId = userId;
+  public User(long id, String username, String password, String email) {
+    this.id = id;
     this.username = username;
     this.password = password;
     this.email = email;
   }
 
-  public long getUserId() {
-    return userId;
+  public long getId() {
+    return id;
   }
 
   public String getUsername() {

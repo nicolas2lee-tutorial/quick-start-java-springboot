@@ -3,13 +3,13 @@ package nicolas2lee.tutorial.javaspringbootquickstart.domain;
 import nicolas2lee.tutorial.javaspringbootquickstart.entity.PostEntity;
 
 public class Post {
-  private Long postId;
+  private Long id;
   private User creator;
   private String content;
   private String lastUpdated;
 
-  public Post(Long postId, User creator, String content, String lastUpdated) {
-    this.postId = postId;
+  public Post(Long id, User creator, String content, String lastUpdated) {
+    this.id = id;
     this.creator = creator;
     this.content = content;
     this.lastUpdated = lastUpdated;
@@ -23,8 +23,8 @@ public class Post {
         entity.getLastUpdated());
   }
 
-  public Long getPostId() {
-    return postId;
+  public Long getId() {
+    return id;
   }
 
   public User getCreator() {
