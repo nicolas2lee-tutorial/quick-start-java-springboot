@@ -1,7 +1,6 @@
 package nicolas2lee.tutorial.javaspringbootquickstart.controller;
 
-import static org.hamcrest.Matchers.contains;
-import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.*;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
@@ -43,7 +42,7 @@ class PostControllerTest {
         .andDo(print())
         .andExpect(status().isOk())
         .andExpect(jsonPath("$").value(Matchers.hasSize(2)))
-        .andExpect(jsonPath("$..postId").value(contains(1, 2)));
+        .andExpect(jsonPath("$..id").value(contains(1, 2)));
   }
 
   private List<Post> mockedPosts() {
