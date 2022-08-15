@@ -10,49 +10,49 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "posts")
 public class PostEntity {
-    @Id
-    @Column(name = "id")
-    private Long id;
+  @Id
+  @Column(name = "id")
+  private Long id;
 
-    @ManyToOne
-    @JoinColumn(name="creator_id", nullable=false)
-    private UserEntity creator;
+  @ManyToOne
+  @JoinColumn(name = "creator_id", nullable = false)
+  private UserEntity creator;
 
-    @Column(name = "content")
-    private String content;
+  @Column(name = "content")
+  private String content;
 
-    @Column(name = "lastUpdated")
-    private String lastUpdated;
+  @Column(name = "lastUpdated")
+  private String lastUpdated;
 
-    public Long getPostId() {
-        return id;
-    }
+  public Long getPostId() {
+    return id;
+  }
 
-    public void setPostId(Long id) {
-        this.id = id;
-    }
+  public void setPostId(Long id) {
+    this.id = id;
+  }
 
-    public UserEntity getCreator() {
-        return creator;
-    }
+  public UserEntity getCreator() {
+    return creator;
+  }
 
-    public void setCreator(UserEntity creatorId) {
-        this.creator = creatorId;
-    }
+  public void setCreator(UserEntity creatorId) {
+    this.creator = creatorId;
+  }
 
-    public String getContent() {
-        return content;
-    }
+  public String getContent() {
+    return content;
+  }
 
-    public void setContent(String content) {
-        this.content = content;
-    }
+  public void setContent(String content) {
+    this.content = content;
+  }
 
-    public String getLastUpdated() {
-        return lastUpdated;
-    }
+  public String getLastUpdated() {
+    return lastUpdated;
+  }
 
-    public void setLastUpdated(String last_updated) {
-        this.lastUpdated = last_updated;
-    }
+  public void setLastUpdated(String last_updated) {
+    this.lastUpdated = last_updated;
+  }
 }

@@ -2,6 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.7.2'
 	id 'io.spring.dependency-management' version '1.0.12.RELEASE'
 	id 'java'
+	id "com.diffplug.spotless" version "6.9.1"
 }
 
 group = 'nicolas2lee.tutorial'
@@ -21,10 +22,19 @@ dependencies {
 	implementation 'org.springdoc:springdoc-openapi-ui:1.6.9'
 	//actuator
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
-//	runtimeOnly 'com.h2database:h2'
+
+	// test
+	testImplementation 'com.h2database:h2'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+spotless {
+	java {
+		removeUnusedImports()
+		googleJavaFormat() // has its own section below
+	}
 }
