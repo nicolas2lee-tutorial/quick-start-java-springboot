@@ -4,7 +4,6 @@ import nicolas2lee.tutorial.javaspringbootquickstart.domain.User;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -14,8 +13,8 @@ import java.util.List;
 @Table(name = "users")
 public class UserEntity {
     @Id
-    @Column(name = "user_id")
-    private long userId;
+    @Column(name = "id")
+    private Long id;
 
     @Column(name = "username")
     private String username;
@@ -29,12 +28,12 @@ public class UserEntity {
     @OneToMany(mappedBy = "creator")
     private List<PostEntity> postEntities;
 
-    public long getUserId() {
-        return userId;
+    public long getId() {
+        return id;
     }
 
-    public void setUserId(long id) {
-        this.userId = id;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -70,6 +69,6 @@ public class UserEntity {
     }
 
     public User toDomain(){
-        return new User(userId, username, password, email);
+        return new User(id, username, password, email);
     }
 }

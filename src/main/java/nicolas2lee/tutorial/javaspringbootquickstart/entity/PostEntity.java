@@ -1,10 +1,7 @@
 package nicolas2lee.tutorial.javaspringbootquickstart.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -14,8 +11,8 @@ import javax.persistence.Table;
 @Table(name = "posts")
 public class PostEntity {
     @Id
-    @Column(name = "post_id")
-    private Long postId;
+    @Column(name = "id")
+    private Long id;
 
     @ManyToOne
     @JoinColumn(name="creator_id", nullable=false)
@@ -28,11 +25,11 @@ public class PostEntity {
     private String lastUpdated;
 
     public Long getPostId() {
-        return postId;
+        return id;
     }
 
     public void setPostId(Long id) {
-        this.postId = id;
+        this.id = id;
     }
 
     public UserEntity getCreator() {
