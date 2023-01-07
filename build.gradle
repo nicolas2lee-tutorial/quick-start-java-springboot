@@ -15,16 +15,18 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	//db postgresql
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	runtimeOnly 'org.postgresql:postgresql'
+	//db h2
+	runtimeOnly 'com.h2database:h2'
+	//db postgresql
+	//runtimeOnly 'org.postgresql:postgresql'
 	//swagger
 	implementation 'org.springdoc:springdoc-openapi-ui:1.6.9'
 	//actuator
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 
 	// test
-	testImplementation 'com.h2database:h2'
+	//testImplementation 'com.h2database:h2'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
