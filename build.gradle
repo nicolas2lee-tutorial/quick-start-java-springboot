@@ -40,3 +40,9 @@ spotless {
 		googleJavaFormat() // has its own section below
 	}
 }
+
+jar {
+	manifest {
+		attributes 'Main-Class': 'nicolas2lee.tutorial.javaspringbootquickstart.JavaSpringbootQuickstartApplication'
+	}
+}
