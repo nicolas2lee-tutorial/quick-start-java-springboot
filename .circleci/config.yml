@@ -17,6 +17,7 @@ jobs:
       - image: docker:17.05.0-ce-git
     working_directory: ~/repo
     steps:
+      - checkout
       - run: docker build -t nicolas2lee-tutorial/quick-start-java-springboot:latest .
 workflows:
   version: 2
