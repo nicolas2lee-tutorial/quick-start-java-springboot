@@ -1,8 +1,17 @@
 version: 2
 
-
 jobs:
-  build:
+  build_jar:
+    docker:
+      - image: circleci/openjdk:11-jdk
+    working_directory: ~/repo
+    environment:
+      JVM_OPTS: -Xmx3200m
+      TERM: dumb
+    steps:
+      - checkout
+      - run: ./gradlew clean build
+  build_docker:
     docker:
       - image: docker:17.05.0-ce-git
     working_directory: ~/repo
@@ -11,9 +20,17 @@ jobs:
       - setup_remote_docker
       - run:
           name: Build application Docker image
-          command: docker build -t nicolas2lee-tutorial/quick-start-java-springboot:latest .
+          command: docker build -t nicolas2lee/quick-start-java-springboot:latest .
+      - run:
+          name: Login dockerhub
+          command: echo DOCKER_HUB_NICOLAS2LEE_PASSWORD | docker login --username nicolas2lee --password-stdin
+      - run:
+          name: Push to dockerhub
+          command: docker push nicolas2lee/quick-start-java-springboot:latest
+
 workflows:
   version: 2
   build:
     jobs:
-      - build
+      - build_jar
+      - build_docker
