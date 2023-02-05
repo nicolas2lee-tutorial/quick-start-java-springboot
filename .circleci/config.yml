@@ -9,6 +9,7 @@ jobs:
       JVM_OPTS: -Xmx3200m
       TERM: dumb
     steps:
+      - checkout
       - run: ./gradlew clean build
   build_docker:
     docker:
