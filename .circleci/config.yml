@@ -13,7 +13,7 @@ jobs:
       - run: ./gradlew clean build
   build_docker:
     docker:
-      - image: cimg/base:stable
+      - image: cimg/base:2022.06
     working_directory: ~/repo
     environment:
       JVM_OPTS: -Xmx3200m
