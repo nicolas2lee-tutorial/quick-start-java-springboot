@@ -3,7 +3,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: docker:17.05.0-ce-git
+      - image: docker:23.0.0
     working_directory: ~/repo
     steps:
       - checkout
