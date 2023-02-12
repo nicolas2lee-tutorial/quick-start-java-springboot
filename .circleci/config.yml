@@ -13,7 +13,7 @@ jobs:
           command: docker build -t nicolas2lee/quick-start-java-springboot:latest .
       - run:
           name: Login dockerhub
-          command: echo DOCKER_HUB_NICOLAS2LEE_PASSWORD | docker login --username nicolas2lee --password DOCKER_HUB_NICOLAS2LEE_PASSWORD
+          command: echo $DOCKER_HUB_NICOLAS2LEE_PASSWORD | docker login --username nicolas2lee --password $DOCKER_HUB_NICOLAS2LEE_PASSWORD
       - run:
           name: Push to dockerhub
           command: docker push nicolas2lee/quick-start-java-springboot:latest

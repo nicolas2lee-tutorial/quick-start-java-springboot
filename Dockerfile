@@ -1,7 +1,7 @@
 FROM amazoncorretto:11 as builder
 COPY . /app
 WORKDIR /app
-RUN ./gradlew spotlessJavaApply
+
 RUN ./gradlew clean build
 
 FROM amazoncorretto:11
