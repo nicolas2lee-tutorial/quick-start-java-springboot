@@ -16,11 +16,6 @@ public class PostController {
     this.postService = postService;
   }
 
-  @GetMapping("/welcome")
-  public String welcome() {
-    return "welcome";
-  }
-
   @GetMapping("/")
   public List<Post> listAll() {
     return postService.getAllPosts();

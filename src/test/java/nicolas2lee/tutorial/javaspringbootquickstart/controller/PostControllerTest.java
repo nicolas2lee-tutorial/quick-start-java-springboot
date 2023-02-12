@@ -17,7 +17,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
 
-/** json path expression https://rungutan.com/blog/extract-value-json-path-expression/ */
+/**
+ * json path expression <a
+ * href="https://rungutan.com/blog/extract-value-json-path-expression/">...</a>
+ */
 @SpringBootTest
 @AutoConfigureMockMvc
 class PostControllerTest {
@@ -27,11 +30,7 @@ class PostControllerTest {
 
   @Test
   void should_return_welcome_message() throws Exception {
-    this.mockMvc
-        .perform(get("/posts/welcome"))
-        .andDo(print())
-        .andExpect(status().isOk())
-        .andExpect(content().string(containsString("welcome")));
+    this.mockMvc.perform(get("/actuator")).andDo(print()).andExpect(status().isOk());
   }
 
   @Test
