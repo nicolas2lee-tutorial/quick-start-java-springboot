@@ -1,3 +1,11 @@
+#server:
+#  port: 443
+#  ssl:
+#    key-store: certs/keystore.p12
+#    key-store-password: changeit
+#    keyStoreType: PKCS12
+#    keyAlias: quick-start-springboot
+
 spring:
   jpa:
 #    properties.hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
